@@ -1,0 +1,82 @@
+{
+	"name": "MountStorage",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "klssparkpool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "3d44b5c4-7658-4039-846a-77d070c8b6e8"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/9ea57abb-990d-4601-94b5-2a2a6d418274/resourceGroups/krlange/providers/Microsoft.Synapse/workspaces/kls-wsmv/bigDataPools/klssparkpool",
+				"name": "klssparkpool",
+				"type": "Spark",
+				"endpoint": "https://kls-wsmv.dev.azuresynapse.usgovcloudapi.net/livyApi/versions/2019-11-01-preview/sparkPools/klssparkpool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"storage_url = \"abfss://testcontainer@klsdlstor1.dfs.core.usgovcloudapi.net\"\r\n",
+					"\r\n",
+					""
+				],
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# Mount the blob storage to the Synapse notebook\r\n",
+					"mssparkutils.fs.unmount('/mount')\r\n",
+					"mssparkutils.fs.mount(f\"{storage_url}\",\"/mount\", {\"linkedService\":\"klslink2storage_dfs\"}) "
+				]
+			}
+		]
+	}
+}

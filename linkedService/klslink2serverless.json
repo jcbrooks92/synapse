@@ -1,0 +1,19 @@
+{
+	"name": "klslink2serverless",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"server": "kls-wsmv-ondemand.sql.azuresynapse.usgovcloudapi.net",
+			"database": "klsserverlessdb",
+			"encrypt": "optional",
+			"trustServerCertificate": true,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

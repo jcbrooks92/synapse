@@ -1,0 +1,16 @@
+{
+	"name": "klslink2storage_blob",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://klsdlstor1.blob.core.usgovcloudapi.net/",
+			"accountKind": "StorageV2"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,62 @@
+{
+	"name": "Notebook 1",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "klssparkpool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "0edf4c33-a2e9-465d-b29e-256c8fe44869"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/9ea57abb-990d-4601-94b5-2a2a6d418274/resourceGroups/krlange/providers/Microsoft.Synapse/workspaces/kls-wsmv/bigDataPools/klssparkpool",
+				"name": "klssparkpool",
+				"type": "Spark",
+				"endpoint": "https://kls-wsmv.dev.azuresynapse.usgovcloudapi.net/livyApi/versions/2019-11-01-preview/sparkPools/klssparkpool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"new_rows = [('CA',22, 45000),(\"WA\",35,65000) ,(\"WA\",50,85000)]\r\n",
+					"demo_df = spark.createDataFrame(new_rows, ['state', 'age', 'salary'])\r\n",
+					"demo_df.show()"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--kls-wsmv-klsdlstor1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/9ea57abb-990d-4601-94b5-2a2a6d418274/resourceGroups/krlange/providers/Microsoft.Storage/storageAccounts/klsdlstor1",
+		"groupId": "dfs",
+		"fqdns": [
+			"klsdlstor1.dfs.core.usgovcloudapi.net"
+		]
+	}
+}

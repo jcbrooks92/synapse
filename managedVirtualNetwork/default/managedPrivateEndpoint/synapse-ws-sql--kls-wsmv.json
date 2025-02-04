@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sql--kls-wsmv",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/9ea57abb-990d-4601-94b5-2a2a6d418274/resourceGroups/krlange/providers/Microsoft.Synapse/workspaces/kls-wsmv",
+		"groupId": "sql",
+		"fqdns": [
+			"kls-wsmv.3a08a351-de61-46d8-81da-e6cadbeda7eb.sql.azuresynapse.usgovcloudapi.net"
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "kls_mpe4storage_blob",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/9ea57abb-990d-4601-94b5-2a2a6d418274/resourceGroups/krlange/providers/Microsoft.Storage/storageAccounts/klsdlstor1",
+		"groupId": "blob",
+		"fqdns": [
+			"klsdlstor1.blob.core.usgovcloudapi.net"
+		]
+	}
+}

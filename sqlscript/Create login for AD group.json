@@ -1,0 +1,17 @@
+{
+	"name": "Create login for AD group",
+	"properties": {
+		"content": {
+			"query": "-- In master\n--CREATE LOGIN kltestgrp FROM EXTERNAL PROVIDER;\n--DROP LOGIN [danwest@cxpacegov.onmicrosoft.us]\n--CREATE LOGIN [danwest@cxpacegov.onmicrosoft.us] FROM EXTERNAL PROVIDER;\n\nSELECT * FROM sys.server_principals pr\nWHERE pr.name like '%danwest%';  \n\n-- Switch to DB\n\n-- DROP USER kltestgrp\n-- CREATE USER kltestgrp FROM LOGIN kltestgrp -- from login in master\nCREATE USER kltestgrp FROM EXTERNAL PROVIDER; -- contained db user using group\n--CREATE USER [danwest@cxpacegov.onmicrosoft.us] FROM EXTERNAL PROVIDER\n\nEXEC sp_addrolemember 'db_owner', 'kltestgrp'\n\n\nSELECT pr.principal_id\n    ,pr.name\n    ,pr.type_desc\n    ,pr.authentication_type_desc\n    ,pe.state_desc\n    ,pe.permission_name \nFROM sys.database_principals AS pr  \nINNER JOIN sys.database_permissions AS pe ON pe.grantee_principal_id = pr.principal_id\nwhere pr.name like '%kltestgrp%'\n--where pr.name like '%danwest%';  \n\n-- Check database roles\nSELECT DP1.name AS DatabaseRoleName,   \n   isnull (DP2.name, 'No members') AS DatabaseUserName   \n FROM sys.database_role_members AS DRM  \n RIGHT OUTER JOIN sys.database_principals AS DP1  \n   ON DRM.role_principal_id = DP1.principal_id  \n LEFT OUTER JOIN sys.database_principals AS DP2  \n   ON DRM.member_principal_id = DP2.principal_id  \nWHERE DP1.type = 'R'\nORDER BY DP1.name;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "klstestdw",
+				"poolName": "klstestdw"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

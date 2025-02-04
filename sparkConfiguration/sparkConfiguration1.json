@@ -1,0 +1,20 @@
+{
+	"name": "sparkConfiguration1",
+	"properties": {
+		"configs": {
+			"spark.synapse.logAnalytics.enabled": "enabled",
+			"spark.synapse.logAnalytics.workspaceId": "a342c5ed-c2c6-455b-bd62-03033c4da4e7",
+			"spark.synapse.logAnalytics.secret": "oF9d1Qi7qxHdQBwLylSTxWT/Isq+As521omlbBxu+d7VVxGAwaQRZX8gx045fGJuZPv5SWYsbF0+ZquVflyvVA==",
+			"spark.synapse.logAnalytics.uriSuffex": "ods.opinsights.azure.us"
+		},
+		"created": "2024-12-13T20:13:46.323Z",
+		"createdBy": "TAbdalla@cxpacegov.onmicrosoft.us",
+		"annotations": [],
+		"configMergeRule": {
+			"artifact.currentOperation.spark.synapse.logAnalytics.enabled": "replace",
+			"artifact.currentOperation.spark.synapse.logAnalytics.workspaceId": "replace",
+			"artifact.currentOperation.spark.synapse.logAnalytics.secret": "replace",
+			"artifact.currentOperation.spark.synapse.logAnalytics.uriSuffex": "replace"
+		}
+	}
+}
